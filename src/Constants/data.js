@@ -1,4 +1,4 @@
-export const NAV_LINKS = ["Services", "About", "Fleet", "Contact"];
+export const NAV_LINKS = ["Services", "About", "Contact"];
 
 export const SERVICES = [
   {
@@ -40,10 +40,10 @@ export const SERVICES = [
 ];
 
 export const STATS = [
-  { value: "12+", label: "Years Operating" },
-  { value: "500+", label: "Vehicles in Fleet" },
+  { value: "99%", label: "Customer Satisfaction" },
+  { value: "350+", label: "Vehicles in Fleet" },
   { value: "98.6%", label: "On-Time Delivery" },
-  { value: "40+", label: "Destinations Served" },
+  { value: "70+", label: "Destinations Served" },
 ];
 
 export const TICKER_ITEMS = [

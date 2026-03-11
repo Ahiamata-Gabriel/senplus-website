@@ -47,7 +47,7 @@ export default function Hero() {
       </div>
 
       {/* Ghost watermark */}
-      <div className="hero__ghost-text">SEN</div>
+      <div className="hero__ghost-text">SEN+</div>
     </section>
   );
 }

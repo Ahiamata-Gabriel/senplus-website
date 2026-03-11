@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import LOGO from "../../assets/logo.js";
+import LOGO from "../../assets/Logo-2.svg";
 import { NAV_LINKS } from "../../constants/data.js";
 import "./Navbar.css";
 
@@ -15,8 +15,14 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`navbar ${scrolled ? "navbar--scrolled" : "navbar--top"}`}>
-        <img src={LOGO} alt="SENPLUS Transport & Logistics" className="navbar__logo" />
+      <nav
+        className={`navbar ${scrolled ? "navbar--scrolled" : "navbar--top"}`}
+      >
+        <img
+          src={LOGO}
+          alt="SENPLUS Transport & Logistics"
+          className="navbar__logo"
+        />
 
         {/* Desktop links */}
         <div className="navbar__desktop">
@@ -25,7 +31,10 @@ export default function Navbar() {
               {link}
             </span>
           ))}
-          <button className="cta-primary" style={{ padding: "10px 24px", fontSize: "0.85rem" }}>
+          <button
+            className="cta-primary"
+            style={{ padding: "10px 24px", fontSize: "0.85rem" }}
+          >
             Get a Quote
           </button>
         </div>
@@ -44,12 +53,19 @@ export default function Navbar() {
 
       {/* Mobile slide-in menu */}
       <div className={`mobile-menu ${menuOpen ? "mobile-menu--open" : ""}`}>
-        <button className="mobile-menu__close" onClick={() => setMenuOpen(false)}>
+        <button
+          className="mobile-menu__close"
+          onClick={() => setMenuOpen(false)}
+        >
           ✕
         </button>
 
         {NAV_LINKS.map((link) => (
-          <span key={link} className="mobile-menu__link" onClick={() => setMenuOpen(false)}>
+          <span
+            key={link}
+            className="mobile-menu__link"
+            onClick={() => setMenuOpen(false)}
+          >
             {link}
           </span>
         ))}
