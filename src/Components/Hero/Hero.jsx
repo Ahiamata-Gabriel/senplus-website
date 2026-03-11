@@ -1,4 +1,4 @@
-import TRUCK_IMG from "../../assets/truck-1.png";
+import TRUCK_IMG from "../../assets/truck-1.webp";
 import "./Hero.css";
 
 export default function Hero() {
