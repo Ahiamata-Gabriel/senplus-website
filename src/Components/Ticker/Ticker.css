@@ -1,0 +1,28 @@
+.ticker {
+  background: #F47820;
+  padding: 14px 0;
+  overflow: hidden;
+}
+
+.ticker__track {
+  display: flex;
+  gap: 60px;
+  animation: tickerScroll 20s linear infinite;
+  white-space: nowrap;
+}
+
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.ticker__item {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.2em;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}

@@ -1,0 +1,144 @@
+.services {
+  padding: 100px 40px;
+  background: #0f0f0f;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 10px,
+    rgba(244, 120, 32, 0.03) 10px,
+    rgba(244, 120, 32, 0.03) 20px
+  );
+}
+
+.services__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── Section header ──────────────────────────────── */
+
+.services__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.services__heading {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+}
+
+.services__heading--accent {
+  color: #f47820;
+}
+
+.services__intro {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.45);
+  max-width: 360px;
+  line-height: 1.7;
+}
+
+/* ── Card grid ───────────────────────────────────── */
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 2px;
+}
+
+/* ── Individual card ─────────────────────────────── */
+
+.service-card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  padding: 36px 28px;
+  position: relative;
+  cursor: pointer;
+  transition:
+    border-color 0.25s,
+    transform 0.25s,
+    background 0.2s;
+  overflow: hidden;
+}
+
+/* Orange left-side accent bar that grows on hover */
+.service-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background: #f47820;
+  transition: height 0.35s ease;
+}
+
+.service-card:hover {
+  border-color: #f47820;
+  background: #1e1e1e;
+  transform: translateY(-4px);
+}
+
+.service-card:hover::before {
+  height: 100%;
+}
+
+.service-card__icon {
+  font-size: 2.2rem;
+  margin-bottom: 16px;
+}
+
+.service-card__title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 12px;
+}
+
+.service-card__desc {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.7;
+}
+
+.service-card__cta {
+  margin-top: 28px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.25);
+  text-transform: uppercase;
+  transition: color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.service-card:hover .service-card__cta {
+  color: #f47820;
+}
+
+/* ── Responsive ──────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .services {
+    padding: 60px 20px;
+  }
+
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+}

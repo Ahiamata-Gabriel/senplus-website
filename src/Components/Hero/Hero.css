@@ -1,0 +1,201 @@
+.hero {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      ellipse at 70% 50%,
+      rgba(244, 120, 32, 0.12) 0%,
+      transparent 60%
+    ),
+    linear-gradient(170deg, #0d0d0d 0%, #111 50%, #151515 100%);
+  display: flex;
+  align-items: center;
+  padding: 120px 40px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Two-column layout ───────────────────────────── */
+
+.hero__layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Background grid lines ───────────────────────── */
+
+.hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(244, 120, 32, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 120, 32, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* ── Top accent bar ──────────────────────────────── */
+
+.hero__accent-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #f47820 0%, transparent 60%);
+}
+
+/* ── Content ─────────────────────────────────────── */
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Image container with gradient fade ──────────── */
+
+.hero__image-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.hero__image {
+  width: 100%;
+  height: auto;
+  max-width: 650px;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.4));
+  /* Gradient mask: fade left edge soft, keep right opaque */
+  -webkit-mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.2) 15%,
+    rgba(0, 0, 0, 1) 35%
+  );
+  mask-image: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.2) 15%,
+    rgba(0, 0, 0, 1) 35%
+  );
+}
+
+/* ── Animated headline ───────────────────────────── */
+
+.hero__word {
+  display: block;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideUp 0.7s forwards;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero__heading {
+  font-family: "Barlow Condensed", sans-serif;
+  /* font-size: clamp(3.5rem, 9vw, 8rem); */
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: 900;
+  line-height: 0.92;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.hero__heading--accent {
+  color: #f47820;
+}
+
+/* ── Subtext ─────────────────────────────────────── */
+
+.hero__subtext {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 300;
+  max-width: 540px;
+  line-height: 1.65;
+  margin-bottom: 48px;
+  animation: slideUp 0.7s 0.5s forwards;
+  opacity: 0;
+}
+
+/* ── CTA row ─────────────────────────────────────── */
+
+.hero__ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: slideUp 0.7s 0.7s forwards;
+  opacity: 0;
+}
+
+/* ── Decorative ghost text ───────────────────────── */
+
+.hero__ghost-text {
+  position: absolute;
+  right: -20px;
+  bottom: 60px;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(8rem, 18vw, 22rem);
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.02);
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: -0.05em;
+}
+
+/* ── Responsive ──────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .hero__layout {
+    gap: 40px;
+  }
+
+  .hero__image {
+    max-width: 550px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__layout {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero__image-container {
+    order: -1; /* Show image above text on mobile */
+  }
+
+  .hero__image {
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero {
+    padding: 100px 20px 60px;
+  }
+
+  .hero__layout {
+    gap: 24px;
+  }
+
+  .hero__image {
+    max-width: 350px;
+  }
+}
