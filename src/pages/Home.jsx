@@ -7,11 +7,21 @@ import CTA from "../Components/CTA/CTA.jsx";
 export default function Home() {
   return (
     <main>
-      <Hero />
-      <Ticker />
-      <Stats />
-      <Services />
-      <CTA />
+      <div id="home">
+        <Hero />
+      </div>
+      <div id="ticker">
+        <Ticker />
+      </div>
+      <div id="stats">
+        <Stats />
+      </div>
+      <div id="services">
+        <Services />
+      </div>
+      <div id="contact">
+        <CTA />
+      </div>
     </main>
   );
 }
