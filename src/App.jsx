@@ -1,24 +1,25 @@
 import "./styles/global.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar.jsx";
-import Hero from "./Components/Hero/Hero.jsx";
-import Stats from "./Components/Stats/Stats.jsx";
-import Ticker from "./Components/Ticker/Ticker.jsx";
-import Services from "./Components/Services/Services.jsx";
-import CTA from "./Components/CTA/CTA.jsx";
 import Footer from "./Components/Footer/Footer.jsx";
+import Home from "./pages/Home.jsx";
+import Services from "./pages/Services.jsx";
+import About from "./pages/About.jsx";
+import Contact from "./pages/Contact.jsx";
 
 export default function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <main>
-        <Hero />
-        <Ticker />
-        <Stats />
-        <Services />
-        <CTA />
-      </main>
-      <Footer />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }

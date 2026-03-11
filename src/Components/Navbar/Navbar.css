@@ -32,6 +32,11 @@
   object-fit: contain;
 }
 
+.navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* ── Desktop Nav ─────────────────────────────────── */
 
 .navbar__desktop {

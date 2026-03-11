@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import LOGO from "../../assets/Logo-2.svg";
-import { NAV_LINKS } from "../../Constants/data.js";
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -13,23 +13,36 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const navLinks = [
+    { label: "Services", path: "/services" },
+    { label: "About", path: "/about" },
+    { label: "Contact", path: "/contact" },
+  ];
+
   return (
     <>
       <nav
         className={`navbar ${scrolled ? "navbar--scrolled" : "navbar--top"}`}
       >
-        <img
-          src={LOGO}
-          alt="SENPLUS Transport & Logistics"
-          className="navbar__logo"
-        />
+        <Link to="/">
+          <img
+            src={LOGO}
+            alt="SENPLUS Transport & Logistics"
+            className="navbar__logo"
+          />
+        </Link>
 
         {/* Desktop links */}
         <div className="navbar__desktop">
-          {NAV_LINKS.map((link) => (
-            <span key={link} className="navbar__link">
-              {link}
-            </span>
+          {navLinks.map((link) => (
+            <Link
+              key={link.path}
+              to={link.path}
+              className="navbar__link"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              {link.label}
+            </Link>
           ))}
           <button
             className="cta-primary"
@@ -60,14 +73,16 @@ export default function Navbar() {
           ✕
         </button>
 
-        {NAV_LINKS.map((link) => (
-          <span
-            key={link}
+        {navLinks.map((link) => (
+          <Link
+            key={link.path}
+            to={link.path}
             className="mobile-menu__link"
             onClick={() => setMenuOpen(false)}
+            style={{ textDecoration: "none", color: "inherit", display: "block" }}
           >
-            {link}
-          </span>
+            {link.label}
+          </Link>
         ))}
 
         <button className="cta-primary" style={{ marginTop: 16 }}>
