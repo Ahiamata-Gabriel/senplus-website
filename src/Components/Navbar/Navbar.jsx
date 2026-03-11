@@ -87,7 +87,8 @@ export default function Navbar() {
                   border: "none",
                   cursor: "pointer",
                   font: "inherit",
-                  padding: 0,
+                  color: "inherit",
+                  textDecoration: "none",
                 }}
               >
                 {link.label}
@@ -145,9 +146,7 @@ export default function Navbar() {
                 cursor: "pointer",
                 font: "inherit",
                 color: "inherit",
-                width: "100%",
-                textAlign: "left",
-                padding: "16px 0",
+                textDecoration: "none",
               }}
             >
               {link.label}
@@ -156,7 +155,7 @@ export default function Navbar() {
             <Link
               key={link.label}
               to={link.path}
-              className="mobile-menu__link"
+              className={`mobile-menu__link ${location.pathname === link.path ? "mobile-menu__link--active" : ""}`}
               onClick={() => setMenuOpen(false)}
               style={{
                 textDecoration: "none",
