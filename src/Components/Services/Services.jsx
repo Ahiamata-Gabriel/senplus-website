@@ -1,4 +1,4 @@
-import { SERVICES } from "../../constants/data.js";
+import { SERVICES } from "../../Constants/data.js";
 import "./Services.css";
 
 export default function Services() {

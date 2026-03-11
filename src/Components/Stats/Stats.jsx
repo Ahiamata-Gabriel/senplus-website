@@ -1,4 +1,4 @@
-import { STATS } from "../../constants/data.js";
+import { STATS } from "../../Constants/data.js";
 import "./Stats.css";
 
 export default function Stats() {

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import LOGO from "../../assets/Logo-2.svg";
-import { NAV_LINKS } from "../../constants/data.js";
+import { NAV_LINKS } from "../../Constants/data.js";
 import "./Navbar.css";
 
 export default function Navbar() {

@@ -1,6 +1,6 @@
 // import LOGO from "../../assets/logo.js";
 import Logo from "../../assets/Logo-2.svg";
-import { FOOTER_COLUMNS } from "../../constants/data.js";
+import { FOOTER_COLUMNS } from "../../Constants/data.js";
 import "./Footer.css";
 
 export default function Footer() {

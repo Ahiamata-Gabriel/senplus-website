@@ -1,4 +1,4 @@
-import { TICKER_ITEMS } from "../../constants/data.js";
+import { TICKER_ITEMS } from "../../Constants/data.js";
 import "./Ticker.css";
 
 export default function Ticker() {
