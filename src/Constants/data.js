@@ -12,7 +12,7 @@ export const NAV_LINKS = [
     isScrollLink: true,
   },
   { label: "About", path: "/about", isScrollLink: false },
-  // { label: "GPS", path: "/gps", isScrollLink: false },
+  { label: "Team", path: "/gps", isScrollLink: false },
 ];
 
 export const SERVICES = [

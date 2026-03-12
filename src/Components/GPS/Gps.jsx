@@ -166,7 +166,7 @@ export default function Gps() {
       </section>
 
       {/* ── TRACKER INPUT SECTION ────────────────────────── */}
-      <section className="gps-tracker-section">
+      {/* <section className="gps-tracker-section">
         <div className="gps-tracker__inner">
           <h2 className="gps-tracker__heading">Quick Tracking</h2>
           <p className="gps-tracker__subtext">
@@ -190,7 +190,7 @@ export default function Gps() {
             .
           </p>
         </div>
-      </section>
+      </section> */}
 
       {/* ── FEATURES GRID ─────────────────────────────────── */}
       <section className="gps-features">
