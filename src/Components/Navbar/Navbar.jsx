@@ -97,6 +97,7 @@ export default function Navbar() {
           <button
             className="cta-primary"
             style={{ padding: "10px 24px", fontSize: "0.85rem" }}
+            onClick={() => navigate("/gps")}
           >
             Get a Quote
           </button>
@@ -157,7 +158,11 @@ export default function Navbar() {
           ),
         )}
 
-        <button className="cta-primary" style={{ marginTop: 16 }}>
+        <button
+          className="cta-primary"
+          style={{ marginTop: 16 }}
+          onClick={() => navigate("/gps")}
+        >
           Get a Quote
         </button>
       </div>

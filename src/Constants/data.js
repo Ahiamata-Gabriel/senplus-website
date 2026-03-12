@@ -5,14 +5,14 @@ export const NAV_LINKS = [
     sectionId: "services",
     isScrollLink: true,
   },
-  { label: "About", path: "/about", isScrollLink: false },
   {
     label: "Contact",
     action: "scrollToSection",
     sectionId: "contact",
     isScrollLink: true,
   },
-  { label: "GPS", path: "/gps", isScrollLink: false },
+  { label: "About", path: "/about", isScrollLink: false },
+  // { label: "GPS", path: "/gps", isScrollLink: false },
 ];
 
 export const SERVICES = [
