@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import TRUCK_IMG from "../../assets/truck-1.webp";
 import "./Hero.css";
 
 export default function Hero() {
+  const navigate = useNavigate();
   return (
     <section className="hero">
       {/* Background decoration */}
@@ -36,8 +38,8 @@ export default function Hero() {
           </p>
 
           <div className="hero__ctas">
-            <button className="cta-primary">Request a Quote</button>
-            <button className="cta-secondary">Track Shipment</button>
+            <button className="cta-primary" onClick={() => navigate("/gps")}>Request a Quote</button>
+            <button className="cta-secondary" onClick={() => navigate("/gps")}>Track Shipment</button>
           </div>
         </div>
 

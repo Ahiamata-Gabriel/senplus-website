@@ -1,0 +1,291 @@
+/* ════════════════════════════════════════════════════════════════════════════
+   ABOUT PAGE STYLES — Matching Project Design System
+   ════════════════════════════════════════════════════════════════════════════ */
+
+.about-page {
+  width: 100%;
+}
+
+/* ── HERO / HEADER SECTION ────────────────────────────────────────────────── */
+
+.about-hero {
+  padding: 120px 40px 80px;
+  background: linear-gradient(170deg, #0d0d0d 0%, #111 50%, #151515 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle grid background */
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(244, 120, 32, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 120, 32, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Accent bar at top */
+.about-hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #f47820 0%, transparent 60%);
+  z-index: 1;
+}
+
+.about-hero__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.about-hero__header {
+  margin-bottom: 80px;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-hero__heading {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.about-hero__subtext {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 0;
+  max-width: 900px;
+}
+
+/* ── MISSION & VISION SECTION ────────────────────────────────────────────── */
+
+.about-mission-vision {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 80px;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.about-mission-vision__item {
+  position: relative;
+  padding-bottom: 0;
+}
+
+.about-mission-vision__heading {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.about-mission-vision__text {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ── WHY CHOOSE SECTION ──────────────────────────────────────────────────── */
+
+.about-why-choose {
+  animation: fadeInUp 0.8s ease-out 0.4s both;
+}
+
+.about-why-choose__heading {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.about-why-choose__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.about-why-card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  padding: 36px 28px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  overflow: hidden;
+  animation: cardFadeIn 0.6s ease-out backwards;
+}
+
+/* Stagger animation for cards */
+.about-why-card:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.about-why-card:nth-child(2) {
+  animation-delay: 0.55s;
+}
+.about-why-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.about-why-card:nth-child(4) {
+  animation-delay: 0.65s;
+}
+.about-why-card:nth-child(5) {
+  animation-delay: 0.7s;
+}
+.about-why-card:nth-child(6) {
+  animation-delay: 0.75s;
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Orange left-side accent bar that grows on hover */
+.about-why-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background: #f47820;
+  transition: height 0.35s ease;
+}
+
+.about-why-card:hover {
+  border-color: #f47820;
+  background: #1e1e1e;
+  transform: translateY(-4px);
+}
+
+.about-why-card:hover::before {
+  height: 100%;
+}
+
+.about-why-card__title {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.about-why-card__desc {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   RESPONSIVE DESIGN
+   ════════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 900px) {
+  .about-mission-vision {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about-hero__heading {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+  }
+
+  .about-why-choose__heading {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .about-hero {
+    padding: 80px 20px 60px;
+  }
+
+  .about-hero__header {
+    margin-bottom: 60px;
+  }
+
+  .about-mission-vision {
+    margin-bottom: 60px;
+    gap: 32px;
+  }
+
+  .about-mission-vision__heading {
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+  }
+
+  .about-hero__heading {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 24px;
+  }
+
+  .about-hero__subtext {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .about-why-choose__heading {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 32px;
+  }
+
+  .about-why-choose__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-why-card {
+    padding: 28px 20px;
+  }
+
+  .about-why-card__title {
+    font-size: 1rem;
+  }
+
+  .about-why-card__desc {
+    font-size: 0.9rem;
+  }
+}

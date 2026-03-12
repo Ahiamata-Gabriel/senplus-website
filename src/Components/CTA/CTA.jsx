@@ -1,15 +1,21 @@
+import { useNavigate } from "react-router-dom";
 import "./CTA.css";
 
 export default function CTA() {
+  const navigate = useNavigate();
+
   return (
     <section className="cta-section">
       <div className="cta-section__glow" />
 
       <div className="cta-section__inner">
-        <div className="section-label" style={{ marginBottom: 20 }}>▶ Ready to Move?</div>
+        <div className="section-label" style={{ marginBottom: 20 }}>
+          ▶ Ready to Move?
+        </div>
 
         <h2 className="cta-section__heading">
-          Get Your Free<br />
+          Get Your Free
+          <br />
           <span className="cta-section__heading--accent">Transport Quote</span>
         </h2>
 
@@ -22,10 +28,17 @@ export default function CTA() {
           <button
             className="cta-primary"
             style={{ fontSize: "1.05rem", padding: "16px 48px" }}
+            onClick={() => navigate("/gps")}
           >
             Request a Quote
           </button>
-          <button className="cta-secondary">📞 Call Us Now</button>
+          <a
+            href="tel:+233533755587"
+            className="cta-secondary"
+            style={{ textDecoration: "none", display: "inline-block" }}
+          >
+            📞 Call Us Now
+          </a>
         </div>
       </div>
     </section>
