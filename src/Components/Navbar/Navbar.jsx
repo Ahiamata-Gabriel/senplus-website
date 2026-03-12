@@ -161,7 +161,10 @@ export default function Navbar() {
         <button
           className="cta-primary"
           style={{ marginTop: 16 }}
-          onClick={() => navigate("/gps")}
+          onClick={() => {
+            navigate("/gps");
+            setMenuOpen(false);
+          }}
         >
           Get a Quote
         </button>
