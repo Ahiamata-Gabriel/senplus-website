@@ -4,6 +4,7 @@ import Navbar from "./Components/Navbar/Navbar.jsx";
 import Footer from "./Components/Footer/Footer.jsx";
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
+import Gps from "./Components/GPS/Gps.jsx";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/gps" element={<Gps />} />
         </Routes>
         <Footer />
       </div>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import LOGO from "../../assets/Logo-2.svg";
+import { NAV_LINKS } from "../../Constants/data";
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -47,19 +48,7 @@ export default function Navbar() {
     }
   };
 
-  const navLinks = [
-    {
-      label: "Services",
-      action: () => scrollToSection("services"),
-      isScrollLink: true,
-    },
-    { label: "About", path: "/about", isScrollLink: false },
-    {
-      label: "Contact",
-      action: () => scrollToSection("contact"),
-      isScrollLink: true,
-    },
-  ];
+  const navLinks = NAV_LINKS;
 
   return (
     <>
@@ -80,7 +69,7 @@ export default function Navbar() {
             link.isScrollLink ? (
               <button
                 key={link.label}
-                onClick={link.action}
+                onClick={() => scrollToSection(link.sectionId)}
                 className="navbar__link"
                 style={{
                   background: "none",
@@ -138,7 +127,7 @@ export default function Navbar() {
           link.isScrollLink ? (
             <button
               key={link.label}
-              onClick={link.action}
+              onClick={() => scrollToSection(link.sectionId)}
               className="mobile-menu__link"
               style={{
                 background: "none",

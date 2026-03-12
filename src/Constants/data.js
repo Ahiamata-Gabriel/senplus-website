@@ -1,4 +1,19 @@
-export const NAV_LINKS = ["Services", "About", "Contact"];
+export const NAV_LINKS = [
+  {
+    label: "Services",
+    action: "scrollToSection",
+    sectionId: "services",
+    isScrollLink: true,
+  },
+  { label: "About", path: "/about", isScrollLink: false },
+  {
+    label: "Contact",
+    action: "scrollToSection",
+    sectionId: "contact",
+    isScrollLink: true,
+  },
+  { label: "GPS", path: "/gps", isScrollLink: false },
+];
 
 export const SERVICES = [
   {
