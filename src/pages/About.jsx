@@ -1,3 +1,4 @@
+import profileImg from "../assets/profile.webp";
 import "./About.css";
 
 export default function About() {
@@ -71,6 +72,86 @@ export default function About() {
                 <div key={i} className="about-why-card">
                   <h4 className="about-why-card__title">{item.title}</h4>
                   <p className="about-why-card__desc">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="about-management">
+            <div className="section-label" style={{ marginBottom: 16 }}>
+              ▶ Leadership
+            </div>
+            <h2 className="about-management__heading">
+              Meet Our{" "}
+              <span className="about-management__accent">Management Team</span>
+            </h2>
+            <p className="about-management__intro">
+              Experienced professionals leading SENPLUS with expertise in
+              logistics, operations, and customer satisfaction.
+            </p>
+
+            <div className="about-management__grid">
+              {[
+                {
+                  name: "James Richardson",
+                  department: "Executive",
+                  position: "Chief Executive Officer",
+                  // Replace with actual photo: managerImg1
+                  image: profileImg,
+                },
+                {
+                  name: "Patricia Walsh",
+                  department: "Operations",
+                  position: "Chief Operations Officer",
+                  // Replace with actual photo: managerImg2
+                  image: profileImg,
+                },
+                {
+                  name: "Michael Chen",
+                  department: "Finance",
+                  position: "Chief Financial Officer",
+                  // Replace with actual photo: managerImg3
+                  image: profileImg,
+                },
+                {
+                  name: "Sarah Mitchell",
+                  department: "Logistics",
+                  position: "VP Fleet & Logistics",
+                  // Replace with actual photo: managerImg4
+                  image: profileImg,
+                },
+                {
+                  name: "David Rodriguez",
+                  department: "Safety",
+                  position: "VP Safety & Compliance",
+                  // Replace with actual photo: managerImg5
+                  image: profileImg,
+                },
+                {
+                  name: "Emma Thompson",
+                  department: "Customer Service",
+                  position: "VP Customer Experience",
+                  // Replace with actual photo: managerImg6
+                  image: profileImg,
+                },
+              ].map((member, i) => (
+                <div key={i} className="about-management-card">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="about-management-card__image"
+                  />
+                  <div className="about-management-card__content">
+                    <h3 className="about-management-card__name">
+                      {member.name}
+                    </h3>
+                    <p className="about-management-card__department">
+                      {member.department}
+                    </p>
+                    <p className="about-management-card__position">
+                      {member.position}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>

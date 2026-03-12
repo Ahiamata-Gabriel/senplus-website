@@ -220,6 +220,165 @@
   margin: 0;
 }
 
+/* ── MANAGEMENT TEAM SECTION ───────────────────────────────────────────── */
+
+.about-management {
+  margin-top: 100px;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+}
+
+.about-management__heading {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  margin-bottom: 24px;
+  color: #fff;
+}
+
+.about-management__accent {
+  color: #f47820;
+}
+
+.about-management__intro {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.7;
+  margin-bottom: 48px;
+  max-width: 600px;
+}
+
+.about-management__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.about-management-card {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  padding: 28px 20px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  overflow: hidden;
+  animation: managementCardFadeIn 0.6s ease-out backwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 320px;
+}
+
+/* Staggered entrance animation for management cards */
+.about-management-card:nth-child(1) {
+  animation-delay: 0.7s;
+}
+.about-management-card:nth-child(2) {
+  animation-delay: 0.75s;
+}
+.about-management-card:nth-child(3) {
+  animation-delay: 0.8s;
+}
+.about-management-card:nth-child(4) {
+  animation-delay: 0.85s;
+}
+.about-management-card:nth-child(5) {
+  animation-delay: 0.9s;
+}
+.about-management-card:nth-child(6) {
+  animation-delay: 0.95s;
+}
+
+@keyframes managementCardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Orange left-side accent bar, grows on hover */
+.about-management-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 0;
+  background: #f47820;
+  transition: height 0.35s ease;
+}
+
+.about-management-card:hover {
+  border-color: #f47820;
+  background: #1e1e1e;
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(244, 120, 32, 0.1);
+}
+
+.about-management-card:hover::before {
+  height: 100%;
+}
+
+.about-management-card:hover .about-management-card__image {
+  box-shadow: 0 8px 24px rgba(244, 120, 32, 0.25);
+  border-color: #f47820;
+}
+
+.about-management-card__content {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.about-management-card__image {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+  border: 2px solid #2a2a2a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: all 0.25s ease;
+}
+
+.about-management-card__name {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #fff;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.about-management-card__department {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #f47820;
+  margin-bottom: 4px;
+  margin-top: 0;
+}
+
+.about-management-card__position {
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.4;
+  margin: 0;
+}
+
 /* ════════════════════════════════════════════════════════════════════════════
    RESPONSIVE DESIGN
    ════════════════════════════════════════════════════════════════════════════ */
@@ -236,6 +395,26 @@
 
   .about-why-choose__heading {
     font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  .about-management__heading {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  .about-management__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .about-management-card {
+    min-height: 340px;
+    padding: 24px 18px;
+  }
+
+  .about-management-card__image {
+    width: 120px;
+    height: 120px;
+    margin-bottom: 12px;
   }
 }
 
@@ -287,5 +466,47 @@
 
   .about-why-card__desc {
     font-size: 0.9rem;
+  }
+
+  .about-management {
+    margin-top: 60px;
+  }
+
+  .about-management__heading {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 20px;
+  }
+
+  .about-management__intro {
+    font-size: 0.9rem;
+    margin-bottom: 32px;
+  }
+
+  .about-management__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .about-management-card {
+    min-height: 320px;
+    padding: 24px 18px;
+  }
+
+  .about-management-card__name {
+    font-size: 0.95rem;
+  }
+
+  .about-management-card__department {
+    font-size: 0.65rem;
+  }
+
+  .about-management-card__position {
+    font-size: 0.75rem;
+  }
+
+  .about-management-card__image {
+    width: 110px;
+    height: 110px;
+    margin-bottom: 12px;
   }
 }

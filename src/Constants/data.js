@@ -75,14 +75,14 @@ export const TICKER_ITEMS = [
 export const FOOTER_COLUMNS = [
   {
     title: "Services",
-    items: ["Freight", "Fuel Delivery", "Hazardous Goods", "Project Logistics"],
+    items: ["Freight", "Fuel Delivery", "Project Logistics"],
   },
   {
     title: "Company",
-    items: ["About Us", "Fleet", "Careers", "News"],
+    items: ["About Us", "Fleet", "News"],
   },
   {
     title: "Contact",
-    items: ["Get a Quote", "Track Shipment", "Support", "Locations"],
+    items: ["Get a Quote", "Track Shipment", "Support"],
   },
 ];
