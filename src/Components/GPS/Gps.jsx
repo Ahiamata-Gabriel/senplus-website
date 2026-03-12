@@ -119,7 +119,7 @@ export default function Gps() {
 
             <div className="gps-hero__ctas">
               <button className="cta-primary">Track a Shipment</button>
-              <button className="cta-secondary">Download App</button>
+              {/* <button className="cta-secondary">Download App</button> */}
             </div>
           </div>
 

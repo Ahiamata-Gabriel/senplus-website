@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { SERVICES } from "../../Constants/data.js";
 import "./Services.css";
 
@@ -31,9 +32,9 @@ export default function Services() {
               <div className="service-card__icon">{svc.icon}</div>
               <h3 className="service-card__title">{svc.title}</h3>
               <p className="service-card__desc">{svc.desc}</p>
-              <div className="service-card__cta">
+              <Link to="/gps" className="service-card__cta">
                 Learn More <span>→</span>
-              </div>
+              </Link>
             </div>
           ))}
         </div>
