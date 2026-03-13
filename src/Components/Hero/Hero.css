@@ -65,6 +65,7 @@
   width: 100%;
   display: flex;
   justify-content: flex-start;
+  overflow: hidden;
 }
 
 .hero__image {
@@ -86,6 +87,18 @@
     rgba(0, 0, 0, 0.2) 15%,
     rgba(0, 0, 0, 1) 35%
   );
+  animation:
+    heroImageEnter 0.9s ease-out forwards,
+    heroImageFloat 3.5s ease-in-out 0.9s infinite;
+  transition:
+    filter 0.3s ease,
+    transform 0.3s ease;
+}
+
+.hero__image:hover {
+  transform: scale(1.03);
+  filter: drop-shadow(0 24px 70px rgba(244, 120, 32, 0.15))
+    drop-shadow(0 20px 60px rgba(0, 0, 0, 0.4));
 }
 
 /* ── Animated headline ───────────────────────────── */
@@ -101,6 +114,45 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ── Hero Image Entry Animation ──────────────────── */
+
+@keyframes heroImageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(30px) translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+}
+
+/* ── Hero Image Floating/Idle Animation ─────────── */
+
+@keyframes heroImageFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ── Reduce Motion Support ──────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__image {
+    animation: none !important;
+    filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.4));
+  }
+
+  .hero__image:hover {
+    transform: none;
+    filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.4));
   }
 }
 
