@@ -93,9 +93,9 @@ export default function About() {
             <div className="about-management__grid">
               {[
                 {
-                  name: "James Richardson",
-                  department: "Executive",
-                  position: "Chief Executive Officer",
+                  name: "Edwin John",
+                  department: "Safety Manager",
+                  Tel: "Chief Executive Officer",
                   // Replace with actual photo: managerImg1
                   image: profileImg,
                 },
