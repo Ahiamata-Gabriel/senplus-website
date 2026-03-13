@@ -93,44 +93,44 @@ export default function About() {
             <div className="about-management__grid">
               {[
                 {
-                  name: "James Richardson",
-                  department: "Executive",
-                  position: "Chief Executive Officer",
+                  name: "Edwin John",
+                  department: "Safety Manager & Compliance Officer",
+                  position: "Safety Manager",
                   // Replace with actual photo: managerImg1
                   image: profileImg,
                 },
                 {
-                  name: "Patricia Walsh",
-                  department: "Operations",
-                  position: "Chief Operations Officer",
+                  name: "Abdul-Fatao",
+                  department: "Human Resources & Administration",
+                  position: "Human Resource Manager",
                   // Replace with actual photo: managerImg2
                   image: profileImg,
                 },
                 {
-                  name: "Michael Chen",
-                  department: "Finance",
-                  position: "Chief Financial Officer",
+                  name: "Reuben Kwabla",
+                  department: "Operations",
+                  position: "Operations Manager",
                   // Replace with actual photo: managerImg3
                   image: profileImg,
                 },
                 {
-                  name: "Sarah Mitchell",
-                  department: "Logistics",
-                  position: "VP Fleet & Logistics",
+                  name: "Josephine Antwi",
+                  department: "Finance",
+                  position: "Chief Accountant",
                   // Replace with actual photo: managerImg4
                   image: profileImg,
                 },
                 {
-                  name: "David Rodriguez",
-                  department: "Safety",
-                  position: "VP Safety & Compliance",
+                  name: "Patrick Eli",
+                  department: "GPS & Call Centre",
+                  position: "GPS/Call Centre Manager",
                   // Replace with actual photo: managerImg5
                   image: profileImg,
                 },
                 {
-                  name: "Emma Thompson",
-                  department: "Customer Service",
-                  position: "VP Customer Experience",
+                  name: "Ebenezer Ahorlu",
+                  department: "Customer Service & Warehousing",
+                  position: "Warehouse Manager",
                   // Replace with actual photo: managerImg6
                   image: profileImg,
                 },
