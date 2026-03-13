@@ -332,7 +332,7 @@ export default function Gps() {
             <div className="gps-contact-card">
               <div className="gps-contact-card__icon">📞</div>
               <h3 className="gps-contact-card__title">Tracking Hotline</h3>
-              <p className="gps-contact-card__number">+1 (555) 123-4567</p>
+              <p className="gps-contact-card__number">+233 53 375 5587</p>
               <p className="gps-contact-card__info">
                 Available 24/7 for urgent tracking queries
               </p>
@@ -342,7 +342,7 @@ export default function Gps() {
             <div className="gps-contact-card">
               <div className="gps-contact-card__icon">💬</div>
               <h3 className="gps-contact-card__title">WhatsApp Support</h3>
-              <p className="gps-contact-card__number">+1 (555) 987-6543</p>
+              <p className="gps-contact-card__number">+233 53 375 5587</p>
               <p className="gps-contact-card__info">
                 Quick replies to common tracking questions
               </p>
@@ -352,7 +352,9 @@ export default function Gps() {
             <div className="gps-contact-card">
               <div className="gps-contact-card__icon">✉️</div>
               <h3 className="gps-contact-card__title">General Enquiries</h3>
-              <p className="gps-contact-card__number">enquiries@senplus.com</p>
+              <p className="gps-contact-card__number">
+                senpluscallcenter@gmail.com
+              </p>
               <p className="gps-contact-card__info">
                 For billing, account, and partnership questions
               </p>
@@ -362,7 +364,9 @@ export default function Gps() {
             <div className="gps-contact-card">
               <div className="gps-contact-card__icon">🎯</div>
               <h3 className="gps-contact-card__title">Operations Team</h3>
-              <p className="gps-contact-card__number">ops@senplus.com</p>
+              <p className="gps-contact-card__number">
+                senpluscallcenter@gmail.com
+              </p>
               <p className="gps-contact-card__info">
                 For delay reports and real-time fleet coordination
               </p>

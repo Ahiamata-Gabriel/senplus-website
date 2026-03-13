@@ -77,7 +77,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="about-management">
+          <div className="about-management" id="about-management">
             <div className="section-label" style={{ marginBottom: 16 }}>
               ▶ Leadership
             </div>

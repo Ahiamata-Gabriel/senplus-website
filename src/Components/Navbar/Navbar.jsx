@@ -48,6 +48,40 @@ export default function Navbar() {
     }
   };
 
+  const handleCrossPageScroll = (targetPath, sectionId) => {
+    setMenuOpen(false);
+
+    if (location.pathname === targetPath) {
+      // Already on the target page, just scroll
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const navHeight = document.querySelector(".navbar")?.offsetHeight || 80;
+        const elementPosition =
+          element.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+          top: elementPosition - navHeight - 16,
+          behavior: "smooth",
+        });
+      }
+    } else {
+      // Navigate to target page first, then scroll
+      navigate(targetPath);
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const navHeight =
+            document.querySelector(".navbar")?.offsetHeight || 80;
+          const elementPosition =
+            element.getBoundingClientRect().top + window.scrollY;
+          window.scrollTo({
+            top: elementPosition - navHeight - 16,
+            behavior: "smooth",
+          });
+        }
+      }, 100);
+    }
+  };
+
   const navLinks = NAV_LINKS;
 
   return (
@@ -71,6 +105,24 @@ export default function Navbar() {
                 key={link.label}
                 onClick={() => scrollToSection(link.sectionId)}
                 className="navbar__link"
+                style={{
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  font: "inherit",
+                  color: "inherit",
+                  textDecoration: "none",
+                }}
+              >
+                {link.label}
+              </button>
+            ) : link.isCrossPageScroll ? (
+              <button
+                key={link.label}
+                onClick={() => handleCrossPageScroll(link.path, link.sectionId)}
+                className={`navbar__link ${
+                  location.pathname === link.path ? "navbar__link--active" : ""
+                }`}
                 style={{
                   background: "none",
                   border: "none",
@@ -137,6 +189,27 @@ export default function Navbar() {
                 font: "inherit",
                 color: "inherit",
                 textDecoration: "none",
+              }}
+            >
+              {link.label}
+            </button>
+          ) : link.isCrossPageScroll ? (
+            <button
+              key={link.label}
+              onClick={() => handleCrossPageScroll(link.path, link.sectionId)}
+              className={`mobile-menu__link ${
+                location.pathname === link.path
+                  ? "mobile-menu__link--active"
+                  : ""
+              }`}
+              style={{
+                background: "none",
+                border: "none",
+                cursor: "pointer",
+                font: "inherit",
+                color: "inherit",
+                textDecoration: "none",
+                display: "block",
               }}
             >
               {link.label}
