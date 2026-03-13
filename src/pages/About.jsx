@@ -77,7 +77,7 @@ export default function About() {
             </div>
           </div>
 
-          <div className="about-management" id="about-management">
+          <div className="about-management">
             <div className="section-label" style={{ marginBottom: 16 }}>
               ▶ Leadership
             </div>
@@ -93,9 +93,9 @@ export default function About() {
             <div className="about-management__grid">
               {[
                 {
-                  name: "Edwin John",
-                  department: "Safety Manager",
-                  Tel: "Chief Executive Officer",
+                  name: "James Richardson",
+                  department: "Executive",
+                  position: "Chief Executive Officer",
                   // Replace with actual photo: managerImg1
                   image: profileImg,
                 },

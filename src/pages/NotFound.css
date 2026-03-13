@@ -1,0 +1,237 @@
+/* ════════════════════════════════════════════════════════════════════════════
+   404 NOT FOUND PAGE STYLES — Matching Project Design System
+   ════════════════════════════════════════════════════════════════════════════ */
+
+.not-found {
+  width: 100%;
+}
+
+/* ── Hero Section ────────────────────────────────────────────────────────── */
+
+.not-found__hero {
+  min-height: 100vh;
+  background: linear-gradient(170deg, #0d0d0d 0%, #111 50%, #151515 100%);
+  display: flex;
+  align-items: center;
+  padding: 120px 40px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Background grid ────────────────────────────────────────────────────── */
+
+.not-found__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(244, 120, 32, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(244, 120, 32, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* ── Accent bar ─────────────────────────────────────────────────────────── */
+
+.not-found__accent-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #f47820 0%, transparent 60%);
+}
+
+/* ── Inner container ────────────────────────────────────────────────────── */
+
+.not-found__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* ── Content area ───────────────────────────────────────────────────────── */
+
+.not-found__content {
+  position: relative;
+  z-index: 2;
+  animation: slideUp 0.9s ease-out forwards;
+  opacity: 0;
+}
+
+.not-found__heading {
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(4rem, 12vw, 10rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, #f47820 0%, #ff9c47 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.not-found__code {
+  display: block;
+}
+
+.not-found__message {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 300;
+  max-width: 540px;
+  line-height: 1.65;
+  margin-bottom: 48px;
+  animation: slideUp 0.9s 0.2s ease-out forwards;
+  opacity: 0;
+}
+
+.not-found__ctas {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  animation: slideUp 0.9s 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+.not-found__ctas .cta-primary,
+.not-found__ctas .cta-secondary {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* ── Illustration ───────────────────────────────────────────────────────── */
+
+.not-found__illustration {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideUp 0.9s 0.3s ease-out forwards;
+  opacity: 0;
+}
+
+.not-found__truck {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 200 / 160;
+}
+
+.not-found__truck-svg {
+  width: 100%;
+  height: 100%;
+  filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.4));
+  animation: truckFloat 3.5s ease-in-out infinite;
+}
+
+/* ── Floating truck animation ───────────────────────────────────────────── */
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes truckFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+/* ── Reduce Motion Support ──────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .not-found__content,
+  .not-found__message,
+  .not-found__ctas,
+  .not-found__illustration {
+    animation: none !important;
+    opacity: 1;
+  }
+
+  .not-found__truck-svg {
+    animation: none !important;
+  }
+}
+
+/* ── Responsive ────────────────────────────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .not-found__inner {
+    gap: 40px;
+  }
+
+  .not-found__truck {
+    max-width: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .not-found__hero {
+    min-height: auto;
+    padding: 100px 40px 80px;
+  }
+
+  .not-found__inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .not-found__illustration {
+    order: -1;
+  }
+
+  .not-found__truck {
+    max-width: 280px;
+  }
+
+  .not-found__heading {
+    font-size: clamp(3rem, 10vw, 5rem);
+  }
+}
+
+@media (max-width: 600px) {
+  .not-found__hero {
+    padding: 80px 20px 60px;
+  }
+
+  .not-found__inner {
+    gap: 24px;
+  }
+
+  .not-found__ctas {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .not-found__ctas .cta-primary,
+  .not-found__ctas .cta-secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .not-found__truck {
+    max-width: 200px;
+  }
+
+  .not-found__message {
+    font-size: 1rem;
+  }
+}
