@@ -45,31 +45,37 @@ export default function About() {
             <div className="about-why-choose__grid">
               {[
                 {
+                  id: "license-insured",
                   title: "Licenced & Insured",
                   desc: "Full compliance with all transport regulations and comprehensive insurance coverage",
                 },
                 {
+                  id: "satisfaction",
                   title: "99% Customer Satisfaction",
                   desc: "Proven track record of reliability and customer service excellence",
                 },
                 {
+                  id: "vehicles",
                   title: "350+ Modern Vehicles",
                   desc: "State-of-the-art fleet regularly maintained and upgraded",
                 },
                 {
+                  id: "delivery",
                   title: "98.6% On-Time Delivery",
                   desc: "Real-time tracking and dedicated project managers",
                 },
                 {
+                  id: "adr-drivers",
                   title: "ADR Certified Drivers",
                   desc: "Certified professionals for hazardous goods transport",
                 },
                 {
+                  id: "operations",
                   title: "24/7 Operations",
                   desc: "Round-the-clock support and availability for your needs",
                 },
-              ].map((item, i) => (
-                <div key={i} className="about-why-card">
+              ].map((item) => (
+                <div key={item.id} className="about-why-card">
                   <h4 className="about-why-card__title">{item.title}</h4>
                   <p className="about-why-card__desc">{item.desc}</p>
                 </div>
@@ -93,49 +99,49 @@ export default function About() {
             <div className="about-management__grid">
               {[
                 {
+                  id: "m-edwin",
                   name: "Edwin John",
                   department: "Safety Manager & Compliance Officer",
                   position: "Safety Manager",
-                  // Replace with actual photo: managerImg1
                   image: profileImg,
                 },
                 {
+                  id: "m-abdul",
                   name: "Abdul-Fatao",
                   department: "Human Resources & Administration",
                   position: "Human Resource Manager",
-                  // Replace with actual photo: managerImg2
                   image: profileImg,
                 },
                 {
+                  id: "m-reuben",
                   name: "Reuben Kwabla",
                   department: "Operations",
                   position: "Operations Manager",
-                  // Replace with actual photo: managerImg3
                   image: profileImg,
                 },
                 {
+                  id: "m-josephine",
                   name: "Josephine Antwi",
                   department: "Finance",
                   position: "Chief Accountant",
-                  // Replace with actual photo: managerImg4
                   image: profileImg,
                 },
                 {
+                  id: "m-patrick",
                   name: "Patrick Eli",
                   department: "GPS & Call Centre",
                   position: "GPS/Call Centre Manager",
-                  // Replace with actual photo: managerImg5
                   image: profileImg,
                 },
                 {
+                  id: "m-ebenezer",
                   name: "Ebenezer Ahorlu",
                   department: "Customer Service & Warehousing",
                   position: "Warehouse Manager",
-                  // Replace with actual photo: managerImg6
                   image: profileImg,
                 },
-              ].map((member, i) => (
-                <div key={i} className="about-management-card">
+              ].map((member) => (
+                <div key={member.id} className="about-management-card">
                   <img
                     src={member.image}
                     alt={member.name}

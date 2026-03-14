@@ -9,7 +9,7 @@ export default function Ticker() {
     <div className="ticker">
       <div className="ticker__track">
         {repeated.map((item, i) => (
-          <span key={i} className="ticker__item">
+          <span key={`ticker-${i}-${item}`} className="ticker__item">
             ◆ {item}
           </span>
         ))}

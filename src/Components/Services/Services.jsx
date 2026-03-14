@@ -25,7 +25,7 @@ export default function Services() {
         {/* Grid */}
         <div className="services__grid">
           {SERVICES.map((svc, i) => (
-            <div key={i} className="service-card">
+            <div key={`service-${i}`} className="service-card">
               <div className="tag-badge" style={{ marginBottom: 20 }}>
                 {svc.tag}
               </div>

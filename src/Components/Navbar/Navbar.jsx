@@ -19,22 +19,7 @@ export default function Navbar() {
   const scrollToSection = (sectionId) => {
     setMenuOpen(false);
 
-    if (location.pathname !== "/") {
-      navigate("/");
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          const navHeight =
-            document.querySelector(".navbar")?.offsetHeight || 80;
-          const elementPosition =
-            element.getBoundingClientRect().top + window.scrollY;
-          window.scrollTo({
-            top: elementPosition - navHeight - 16,
-            behavior: "smooth",
-          });
-        }
-      }, 100);
-    } else {
+    const performScroll = () => {
       const element = document.getElementById(sectionId);
       if (element) {
         const navHeight = document.querySelector(".navbar")?.offsetHeight || 80;
@@ -45,14 +30,33 @@ export default function Navbar() {
           behavior: "smooth",
         });
       }
+    };
+
+    if (location.pathname !== "/") {
+      navigate("/");
+      // Wait for the page to render before attempting to scroll
+      const maxAttempts = 20;
+      let attempts = 0;
+      const attemptScroll = () => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          performScroll();
+        } else if (attempts < maxAttempts) {
+          attempts++;
+          requestAnimationFrame(attemptScroll);
+        }
+      };
+      // Start checking after a small delay to give React time to render
+      setTimeout(attemptScroll, 50);
+    } else {
+      performScroll();
     }
   };
 
   const handleCrossPageScroll = (targetPath, sectionId) => {
     setMenuOpen(false);
 
-    if (location.pathname === targetPath) {
-      // Already on the target page, just scroll
+    const performScroll = () => {
       const element = document.getElementById(sectionId);
       if (element) {
         const navHeight = document.querySelector(".navbar")?.offsetHeight || 80;
@@ -63,22 +67,27 @@ export default function Navbar() {
           behavior: "smooth",
         });
       }
+    };
+
+    if (location.pathname === targetPath) {
+      // Already on the target page, just scroll
+      performScroll();
     } else {
       // Navigate to target page first, then scroll
       navigate(targetPath);
-      setTimeout(() => {
+      // Wait for the page to render before attempting to scroll
+      const maxAttempts = 20;
+      let attempts = 0;
+      const attemptScroll = () => {
         const element = document.getElementById(sectionId);
         if (element) {
-          const navHeight =
-            document.querySelector(".navbar")?.offsetHeight || 80;
-          const elementPosition =
-            element.getBoundingClientRect().top + window.scrollY;
-          window.scrollTo({
-            top: elementPosition - navHeight - 16,
-            behavior: "smooth",
-          });
+          performScroll();
+        } else if (attempts < maxAttempts) {
+          attempts++;
+          requestAnimationFrame(attemptScroll);
         }
-      }, 100);
+      };
+      setTimeout(attemptScroll, 50);
     }
   };
 

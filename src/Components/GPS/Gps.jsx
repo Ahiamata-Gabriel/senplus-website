@@ -214,7 +214,7 @@ export default function Gps() {
           <div className="gps-features__grid">
             {features.map((feature, idx) => (
               <div
-                key={idx}
+                key={`feature-${idx}`}
                 className="gps-feature-card"
                 style={{ animationDelay: `${idx * 0.1}s` }}
               >
@@ -239,7 +239,7 @@ export default function Gps() {
 
           <div className="gps-steps">
             {steps.map((step, idx) => (
-              <div key={idx} className="gps-step">
+              <div key={`step-${idx}`} className="gps-step">
                 <div className="gps-step__number">{step.number}</div>
                 <h3 className="gps-step__title">{step.title}</h3>
                 <p className="gps-step__desc">{step.desc}</p>
@@ -397,7 +397,7 @@ export default function Gps() {
           <div className="gps-faq__list">
             {faqs.map((faq, idx) => (
               <div
-                key={idx}
+                key={`faq-${idx}`}
                 className={`gps-faq-item ${activeFaq === idx ? "gps-faq-item--open" : ""}`}
               >
                 <button
