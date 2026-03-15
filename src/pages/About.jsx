@@ -1,4 +1,10 @@
-import profileImg from "../assets/profile.webp";
+// import profileImg from "../assets/profile.webp";
+import fatao from "../assets/fatao.webp";
+import reuben from "../assets/reuben.webp";
+import josang from "../assets/Josephine.webp";
+import patrick from "../assets/patrick.webp";
+import avaFallback from "../assets/ava.jpg";
+
 import "./About.css";
 
 export default function About() {
@@ -103,49 +109,53 @@ export default function About() {
                   name: "Edwin John",
                   department: "Safety Manager & Compliance Officer",
                   position: "Safety Manager",
-                  image: profileImg,
+                  image: avaFallback,
                 },
                 {
                   id: "m-abdul",
                   name: "Abdul-Fatao",
                   department: "Human Resources & Administration",
                   position: "Human Resource Manager",
-                  image: profileImg,
+                  image: fatao,
                 },
                 {
                   id: "m-reuben",
                   name: "Reuben Kwabla",
                   department: "Operations",
                   position: "Operations Manager",
-                  image: profileImg,
+                  image: reuben,
                 },
                 {
                   id: "m-josephine",
                   name: "Josephine Antwi",
                   department: "Finance",
                   position: "Chief Accountant",
-                  image: profileImg,
+                  image: josang,
                 },
                 {
                   id: "m-patrick",
                   name: "Patrick Eli",
                   department: "GPS & Call Centre",
                   position: "GPS/Call Centre Manager",
-                  image: profileImg,
+                  image: patrick,
                 },
                 {
                   id: "m-ebenezer",
                   name: "Ebenezer Ahorlu",
                   department: "Customer Service & Warehousing",
                   position: "Warehouse Manager",
-                  image: profileImg,
+                  image: avaFallback,
                 },
               ].map((member) => (
                 <div key={member.id} className="about-management-card">
                   <img
-                    src={member.image}
+                    src={member.image || avaFallback}
                     alt={member.name}
                     className="about-management-card__image"
+                    onError={(e) => {
+                      e.currentTarget.onerror = null;
+                      e.currentTarget.src = avaFallback;
+                    }}
                   />
                   <div className="about-management-card__content">
                     <h3 className="about-management-card__name">
