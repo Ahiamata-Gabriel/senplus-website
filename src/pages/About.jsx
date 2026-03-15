@@ -1,7 +1,7 @@
 // import profileImg from "../assets/profile.webp";
 import fatao from "../assets/fatao.webp";
 import reuben from "../assets/reuben.webp";
-import josephine from "../assets/Josephine.webp";
+// import josephine from "../assets/Josephine.webp";
 import patrick from "../assets/patrick.webp";
 import avaFallback from "../assets/ava.jpg";
 
@@ -130,7 +130,7 @@ export default function About() {
                   name: "Josephine Antwi",
                   department: "Finance",
                   position: "Chief Accountant",
-                  image: josephine,
+                  image: avaFallback,
                 },
                 {
                   id: "m-patrick",
