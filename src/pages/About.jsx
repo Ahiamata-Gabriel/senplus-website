@@ -1,9 +1,11 @@
-// import profileImg from "../assets/profile.webp";
+
 import fatao from "../assets/fatao.webp";
 import reuben from "../assets/reuben.webp";
-// import josephine from "../assets/Josephine.webp";
+
 import patrick from "../assets/patrick.webp";
 import avaFallback from "../assets/ava.jpg";
+import josepjine from "../assets/josephine.webp";
+import edwin from "../assets/edwin.webp";
 
 import "./About.css";
 
@@ -109,7 +111,7 @@ export default function About() {
                   name: "Edwin John",
                   department: "Safety Manager & Compliance Officer",
                   position: "Safety Manager",
-                  image: avaFallback,
+                  image: edwin,
                 },
                 {
                   id: "m-abdul",
@@ -130,7 +132,7 @@ export default function About() {
                   name: "Josephine Antwi",
                   department: "Finance",
                   position: "Chief Accountant",
-                  image: avaFallback,
+                  image: josepjine,
                 },
                 {
                   id: "m-patrick",

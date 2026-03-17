@@ -33,7 +33,7 @@ export default function CTA() {
             Request a Quote
           </button>
           <a
-            href="tel:+233533755587"
+            href="tel:+233 24 366 4565"
             className="cta-secondary"
             style={{ textDecoration: "none", display: "inline-block" }}
           >
